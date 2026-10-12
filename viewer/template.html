@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}} · {{subtitle}}</title>
+<meta name="description" content="{{title}} — {{subtitle}} · {{presenter}} · {{date}}">
+<meta name="generator" content="build.js ({{built_at}})">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ===== 슬라이드 공통: assets/slide-theme.css ===== */
+{{theme_css}}
+
+/* ===== 슬라이드별 스타일: slides/*.html 의 <style> ===== */
+{{slide_styles}}
+
+/* ===== 뷰어: viewer/viewer.css ===== */
+{{viewer_css}}
+</style>
+</head>
+<body>
+
+<main class="stage-wrap" id="stageWrap" aria-label="슬라이드">
+  <div class="stage" id="stage" data-dir="next">
+{{slides}}
+  </div>
+</main>
+
+<nav class="bar" id="bar" aria-label="발표 조작">
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  <div class="bar-left">
+    <span class="bar-title">{{title}}</span>
+    <span class="counter" id="counter" aria-live="polite">1 / {{count}}</span>
+  </div>
+  <div class="bar-center">
+    <button type="button" class="nav-btn" id="prevBtn" aria-label="이전 슬라이드" title="이전 (←)">←</button>
+    <button type="button" class="nav-btn" id="nextBtn" aria-label="다음 슬라이드" title="다음 (→)">→</button>
+  </div>
+  <div class="bar-right">
+    <button type="button" class="tool-btn" id="tocBtn" aria-expanded="false" aria-controls="toc">목차</button>
+    <button type="button" class="tool-btn" id="qrBtn" aria-expanded="false" aria-controls="qr">QR</button>
+    <button type="button" class="tool-btn" id="fsBtn" aria-pressed="false" title="전체화면 (F)">전체화면</button>
+  </div>
+</nav>
+
+<aside class="toc" id="toc" role="dialog" aria-label="목차" aria-hidden="true">
+  <header class="toc-head">
+    <p class="toc-kicker">{{subtitle}}</p>
+    <h2 class="toc-title">{{title}}</h2>
+    <p class="toc-meta">{{presenter}} · {{date}}</p>
+  </header>
+  <ol class="toc-list">
+{{toc}}
+  </ol>
+</aside>
+
+<aside class="qr" id="qr" role="dialog" aria-label="현재 페이지 QR 코드" aria-hidden="true">
+  <div class="qr-code" id="qrCode"></div>
+  <p class="qr-url" id="qrUrl"></p>
+  <p class="qr-hint" id="qrHint">휴대전화 카메라로 스캔하면 이 발표 페이지가 열립니다.</p>
+  <button type="button" class="link-btn" id="copyBtn">주소 복사</button>
+</aside>
+
+<div class="scrim" id="scrim" hidden></div>
+
+<script>
+/* ===== vendor/qrcode.min.js — qrcode-generator 1.4.4 (Kazuhiko Arase, MIT) ===== */
+{{qr_js}}
+</script>
+<script>
+window.DECK = {{config_json}};
+/* ===== viewer/viewer.js ===== */
+{{viewer_js}}
+</script>
+</body>
+</html>

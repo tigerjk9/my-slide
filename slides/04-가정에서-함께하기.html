@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>가정에서 함께하기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/slide-theme.css">
+<style>
+  .home .cols { display: grid; grid-template-columns: 1fr 392px; column-gap: 56px; margin-top: 44px; align-items: start; }
+  .home .label { padding-bottom: 14px; border-bottom: 3px solid currentColor; }
+  .home .do .label   { color: var(--forest); }
+  .home .dont .label { color: var(--clay); }
+  .home .do li { padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 17px; line-height: 1.65; color: var(--ink-soft); }
+  .home .do li strong { display: block; font-size: 18px; line-height: 1.5; color: var(--ink); }
+  .home .dont { background: var(--paper-deep); padding: 32px 36px 24px; }
+  .home .dont li { position: relative; padding: 14px 0 14px 30px; font-size: 17px; line-height: 1.55; border-bottom: 1px solid rgba(31, 46, 42, .12); }
+  .home .dont li:last-child { border-bottom: 0; }
+  .home .dont li::before { content: "×"; position: absolute; left: 0; top: 11px; font: 700 20px/1.4 var(--font-display); color: var(--clay); }
+</style>
+</head>
+<body class="slide-preview">
+<section class="slide home" data-title="가정에서 함께하기">
+  <header class="head">
+    <p class="kicker">가정에서 함께하기</p>
+    <h2 class="title">집에서는 이것만 부탁드립니다</h2>
+  </header>
+
+  <div class="cols">
+    <div class="do">
+      <h3 class="label">이렇게 해 주세요</h3>
+      <ul>
+        <li><strong>시간과 자리를 정해 주세요</strong>잠들기 전 15분, 늘 같은 자리에서 읽으면 습관이 빨리 붙습니다.</li>
+        <li><strong>읽는 모습을 보여 주세요</strong>부모가 책을 읽는 모습이 어떤 말보다 좋은 본보기입니다.</li>
+        <li><strong>책은 아이가 고르게 해 주세요</strong>만화책도, 그림책도, 읽은 책을 다시 읽는 것도 괜찮습니다.</li>
+        <li><strong>다 읽었는지보다 무엇이 재미있었는지 물어 주세요</strong>대답이 짧아도 그대로 들어 주시면 됩니다.</li>
+      </ul>
+    </div>
+    <div class="dont">
+      <h3 class="label">이것만은 피해 주세요</h3>
+      <ul>
+        <li>읽은 뒤에 꼭 독후감을 쓰게 하는 것</li>
+        <li>형제나 친구와 읽은 양을 비교하는 것</li>
+        <li>“책 먼저 읽어야 게임”처럼 읽기를 조건으로 거는 것</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="running">{{title}} · {{subtitle}}</p>
+</section>
+</body>
+</html>

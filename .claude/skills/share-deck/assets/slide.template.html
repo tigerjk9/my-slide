@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/slide-theme.css">
+<style>
+  /* 이 슬라이드만의 스타일. 반드시 .__CLASS__ 로 범위를 한정한다.
+     index.html 에서는 모든 슬라이드의 <style> 이 한곳에 모이므로 범위 없는 선택자는 다른 장을 망가뜨린다. */
+  .__CLASS__ .body { margin-top: 48px; }
+</style>
+</head>
+<body class="slide-preview">
+<section class="slide __CLASS__" data-title="__TITLE__">
+  <header class="head">
+    <p class="kicker">작은 제목</p>
+    <h2 class="title">큰 제목</h2>
+  </header>
+
+  <div class="body">
+    <!-- 본문. 1280×720 안, 아래 y 640 이전에 끝나야 러닝 헤드와 겹치지 않는다. -->
+  </div>
+
+  <p class="running">{{title}} · {{subtitle}}</p>
+</section>
+</body>
+</html>

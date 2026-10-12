@@ -1,0 +1,72 @@
+/* =====================================================================
+   assets/slide-theme.css
+   슬라이드 공통 스타일. 모든 슬라이드는 1280×720 기준으로 그린다.
+   index.html(뷰어)이 화면 크기에 맞춰 슬라이드를 통째로 축소·확대한다.
+   ===================================================================== */
+
+:root {
+  --paper: #f6f1e6;        /* 종이 */
+  --paper-deep: #ebe2cc;   /* 진한 종이 */
+  --ink: #1f2e2a;          /* 먹 */
+  --ink-soft: #5c6c66;     /* 연한 먹 */
+  --forest: #2e5c49;       /* 짙은 초록 */
+  --clay: #c2573b;         /* 붉은 흙 */
+  --honey: #dfae55;        /* 꿀색 */
+  --line: rgba(31, 46, 42, 0.18);
+  --font-display: "Noto Serif KR", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+  --font-body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+/* 슬라이드 파일을 단독으로 열었을 때의 배경 */
+body.slide-preview {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #121b17;
+  overflow: auto;
+}
+
+/* ---- 슬라이드 본체 ---- */
+.slide {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  flex: none;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 72px 88px 64px;
+  background:
+    radial-gradient(900px 520px at 12% -8%, #fcf9f1 0%, rgba(252, 249, 241, 0) 70%),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+.slide * { box-sizing: border-box; margin: 0; }
+.slide ul, .slide ol { padding: 0; list-style: none; }
+.slide strong { font-weight: 700; color: var(--ink); }
+.slide em { font-style: normal; color: var(--forest); }
+
+/* ---- 글자 ---- */
+.kicker { font: 700 14px/1 var(--font-body); letter-spacing: .22em; color: var(--clay); }
+.title  { margin-top: 18px; font: 900 52px/1.22 var(--font-display); letter-spacing: -.015em; }
+.lead   { margin-top: 24px; font-size: 22px; line-height: 1.6; color: var(--ink-soft); }
+.label  { font: 700 14px/1 var(--font-body); letter-spacing: .18em; }
+
+/* 러닝 헤드: 왼쪽 아래에 덱 제목 */
+.running {
+  position: absolute; left: 88px; bottom: 40px;
+  display: flex; align-items: center; gap: 12px;
+  font-size: 13px; letter-spacing: .04em; color: var(--ink-soft);
+}
+.running::before { content: ""; width: 28px; height: 1px; background: var(--clay); }
+
+/* 책꽂이 선과 책등 그림 (표지·마무리에서 사용) */
+.shelf  { position: absolute; left: 0; right: 0; height: 3px; background: var(--ink); }
+.spines { position: absolute; display: block; }
